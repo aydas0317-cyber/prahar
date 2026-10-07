@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRAHAR — Command Decision Training System</title>
+  <meta name="description" content="PRAHAR — Indian Army command decision training system for degraded communication environments. Privacy-preserving, local-first." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=fullstack-v3" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233dd68c' stroke-width='2'%3E%3Cpath d='M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z'/%3E%3Cpath d='M13 2L5 13h5l-2 9 8-12h-5l2-8z'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <!-- ===== LANDING ===== -->
+  <main id="view-landing" class="view active">
+    <nav class="topnav">
+      <div class="brand"><svg class="brand-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/><path d="M13 2L5 13h5l-2 9 8-12h-5l2-8z"/></svg><span class="brand-text">PRAHAR</span></div>
+      <div class="nav-links"><a href="#explain">System Overview</a><a href="#demo">Live Demo</a><a href="#innovation">Innovation</a><a href="#research">Research</a><a href="#roadmap">Roadmap</a></div>
+      <button class="btn-primary btn-sm" data-action="go-login">Enter Platform</button>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-badge"><span class="dot dot-live"></span> INDIAN ARMY — COMMAND DECISION TRAINING SYSTEM</div>
+        <h1 class="hero-title">Trains commanders to make <span class="accent">time-critical decisions under incomplete, delayed, and conflicting information</span></h1>
+        <p class="hero-desc">Existing training formats (TEWT, CPX) assume complete and reliable information flow. PRAHAR deliberately injects incomplete, delayed, or contradictory intelligence feeds — training decision-making under uncertainty rather than under ideal conditions.</p>
+        <div class="hero-stats"><div class="stat"><span class="stat-val">7</span><span class="stat-lbl">MVP Modules</span></div><div class="stat"><span class="stat-val">4</span><span class="stat-lbl">Command Roles</span></div><div class="stat"><span class="stat-val">100%</span><span class="stat-lbl">Local / On-Premise</span></div><div class="stat"><span class="stat-val">0</span><span class="stat-lbl">Cloud Dependency</span></div></div>
+        <div class="hero-actions"><button class="btn-primary" data-action="go-login">Launch Demo</button><button class="btn-ghost" data-scroll="gameplay-demo">See How It Works</button></div>
+      </div>
+      <div class="hero-right">
+        <div class="radar"><div class="radar-ring r1"></div><div class="radar-ring r2"></div><div class="radar-ring r3"></div><div class="radar-sweep"></div><div class="radar-core"></div><div class="radar-blip" style="--a:37deg;--d:35%"></div><div class="radar-blip" style="--a:142deg;--d:60%"></div><div class="radar-blip" style="--a:248deg;--d:45%"></div><div class="radar-blip" style="--a:310deg;--d:75%"></div></div>
+        <div class="radar-stats"><div class="rs"><span class="dot dot-live"></span> 3 ASSETS</div><div class="rs"><span class="dot dot-warn"></span> 1 COMMS DEGRADED</div><div class="rs"><span class="dot dot-critical"></span> 1 SIGNAL LOST</div></div>
+      </div>
+    </section>
+
+    <!-- EXPLAINER -->
+    <section id="explain" class="explain-section">
+      <div class="section-head"><span class="tag">SYSTEM OVERVIEW</span><h2 class="section-title">How the System Works</h2></div>
+      <div class="explain-flow">
+        <div class="explain-step"><div class="step-num">01</div><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h3>Instructor Control</h3><p>The instructor initiates the scenario and injects communication failures (delay, blackout, packet loss) and contradictory intelligence — all in real time.</p></div>
+        <div class="explain-arrow">&rarr;</div>
+        <div class="explain-step"><div class="step-num">02</div><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div><h3>Degraded Information</h3><p>The commander receives incomplete, delayed, or contradictory information. Each source has a distinct reliability score. Decisions must be made without complete data.</p></div>
+        <div class="explain-arrow">&rarr;</div>
+        <div class="explain-step"><div class="step-num">03</div><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><h3>Decision + Rationale</h3><p>The commander selects a course of action, sets a confidence level, and submits a written rationale. The system records everything — what was decided, why, how confident, and how long it took.</p></div>
+        <div class="explain-arrow">&rarr;</div>
+        <div class="explain-step"><div class="step-num">04</div><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div><h3>Automated AAR</h3><p>After the exercise, the system generates an After-Action Review: decision timeline, information snapshot, confidence trend, comms failures, cascade detection, AI evaluation, and exportable report.</p></div>
+      </div>
+      <div class="explain-note">
+        <div class="explain-note-box"><strong>This system does not simply test whether the final decision was correct.</strong> It evaluates the decision process — how the commander handled conflicting information, weighted source reliability, managed time pressure, and tracked cascading effects.</div>
+      </div>
+    </section>
+
+    <!-- LIVE DEMO PREVIEW -->
+    <section id="demo" class="demo-section">
+      <div class="section-head"><span class="tag">LIVE DEMO</span><h2 class="section-title">Platform Simulation</h2></div>
+      <div class="demo-preview">
+        <div class="demo-window">
+          <div class="demo-titlebar"><div class="demo-dots"><span></span><span></span><span></span></div><span class="demo-title">PRAHAR — Instructor Dashboard</span></div>
+          <div class="demo-content">
+            <div class="demo-flow">
+              <div class="flow-step" data-flow="1"><div class="flow-dot dot-live"></div><span>Normal Comms</span></div>
+              <div class="flow-line"></div>
+              <div class="flow-step" data-flow="2"><div class="flow-dot dot-warn"></div><span>Comms Degraded</span></div>
+              <div class="flow-line"></div>
+              <div class="flow-step" data-flow="3"><div class="flow-dot dot-critical"></div><span>Conflicting Intel</span></div>
+              <div class="flow-line"></div>
+              <div class="flow-step" data-flow="4"><div class="flow-dot dot-live"></div><span>Decision</span></div>
+              <div class="flow-line"></div>
+              <div class="flow-step" data-flow="5"><div class="flow-dot dot-live"></div><span>AAR</span></div>
+            </div>
+            <div class="demo-map">
+              <div class="demo-map-grid"></div>
+              <div class="demo-unit demo-unit-friendly" style="top:30%;left:20%"><span>ALPHA</span></div>
+              <div class="demo-unit demo-unit-friendly" style="top:55%;left:35%"><span>BRAVO</span></div>
+              <div class="demo-unit demo-unit-friendly" style="top:20%;left:55%"><span>AIR-1</span></div>
+              <div class="demo-unit demo-unit-hostile" style="top:40%;left:70%"><span>HOSTILE</span></div>
+              <div class="demo-unit demo-unit-unknown" style="top:65%;left:75%"><span>?</span></div>
+              <div class="demo-comms demo-comms-ok" style="top:30%;left:20%;width:20%;height:30%"></div>
+              <div class="demo-comms demo-comms-bad" style="top:55%;left:35%;width:38%;height:10%"></div>
+            </div>
+            <div class="demo-side">
+              <div class="demo-eval"><div class="demo-eval-label">Info Reliability</div><div class="demo-eval-bar"><div class="demo-eval-fill" style="width:55%;background:#f59e0b"></div></div></div>
+              <div class="demo-eval"><div class="demo-eval-label">Uncertainty</div><div class="demo-eval-bar"><div class="demo-eval-fill" style="width:65%;background:#ef4444"></div></div></div>
+              <div class="demo-intel"><div class="demo-intel-entry"><span class="demo-intel-time">T+00:12</span> CONFLICT: 2 vs 4 aircraft detected</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-cta"><button class="btn-primary" data-action="go-login">Launch Full Simulation &rarr;</button></div>
+    </section>
+
+    <!-- ===== GAMEPLAY DEMO ===== -->
+    <section id="gameplay-demo" class="gameplay-demo-section">
+      <div class="section-head"><span class="tag">GAMEPLAY DEMO</span><h2 class="section-title">See It In Action</h2></div>
+      <div class="gameplay-demo-wrap">
+        <div class="gameplay-demo-window">
+          <div class="gameplay-demo-titlebar"><div class="demo-dots"><span></span><span></span><span></span></div><span class="demo-title">PRAHAR — Live Gameplay Demo</span><div class="gameplay-demo-stage" id="gp-stage">NORMAL COMMS</div></div>
+          <div class="gameplay-demo-body">
+            <div class="gp-map">
+              <div class="gp-map-grid"></div>
+              <svg class="gp-map-svg" viewBox="0 0 400 250" preserveAspectRatio="xMidYMin meet">
+                <defs><filter id="gp-glow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+                <g id="gp-comms"><line class="gp-link gp-link-ok" x1="90" y1="100" x2="150" y2="160"/><line class="gp-link gp-link-ok" x1="90" y1="100" x2="210" y2="60"/><line class="gp-link gp-link-ok" x1="150" y1="160" x2="300" y2="110"/></g>
+                <g id="gp-units">
+                  <g transform="translate(90,100)"><circle class="gp-unit-pulse gp-friendly animate" cx="0" cy="0" r="10"/><circle class="gp-unit-circle gp-friendly" cx="0" cy="0" r="12"/><text class="gp-unit-label" x="0" y="3">ALPHA</text></g>
+                  <g transform="translate(150,160)"><circle class="gp-unit-pulse gp-friendly animate" cx="0" cy="0" r="10"/><circle class="gp-unit-circle gp-friendly" cx="0" cy="0" r="12"/><text class="gp-unit-label" x="0" y="3">BRAVO</text></g>
+                  <g transform="translate(210,60)"><circle class="gp-unit-pulse gp-friendly animate" cx="0" cy="0" r="10"/><circle class="gp-unit-circle gp-friendly" cx="0" cy="0" r="12"/><text class="gp-unit-label" x="0" y="3">AIR-1</text></g>
+                  <g transform="translate(300,110)"><circle class="gp-unit-pulse gp-hostile animate" cx="0" cy="0" r="10"/><circle class="gp-unit-circle gp-hostile" cx="0" cy="0" r="12"/><text class="gp-unit-label gp-hostile-label" x="0" y="3">HOSTILE</text></g>
+                  <g transform="translate(320,190)"><circle class="gp-unit-pulse gp-unknown animate" cx="0" cy="0" r="10"/><circle class="gp-unit-circle gp-unknown" cx="0" cy="0" r="12"/><text class="gp-unit-label gp-unknown-label" x="0" y="3">?</text></g>
+                </g>
+                <g id="gp-effects"></g>
+              </svg>
+            </div>
+            <div class="gp-side">
+              <div class="gp-intel" id="gp-intel"><div class="gp-intel-entry gp-intel-ok"><span class="gp-intel-time">T+00:05</span> All units reporting nominal. Comms stable.</div></div>
+              <div class="gp-decision" id="gp-decision">
+                <div class="gp-decision-title">DECISION PANEL</div>
+                <div class="gp-decision-options">
+                  <div class="gp-opt" data-gp-opt="attack">Engage Hostile</div>
+                  <div class="gp-opt" data-gp-opt="recon">Deploy Recon</div>
+                  <div class="gp-opt" data-gp-opt="defend">Fortify Position</div>
+                  <div class="gp-opt" data-gp-opt="retreat">Tactical Withdrawal</div>
+                </div>
+                <div class="gp-confidence"><div class="gp-conf-bar"><div class="gp-conf-fill" id="gp-conf-fill" style="width:50%"></div></div><span id="gp-conf-val">50%</span></div>
+              </div>
+              <div class="gp-aar" id="gp-aar" style="display:none">
+                <div class="gp-aar-title">AFTER-ACTION REVIEW</div>
+                <div class="gp-aar-scores">
+                  <div class="gp-score"><span class="gp-score-lbl">Decision</span><span class="gp-score-val">82/100</span></div>
+                  <div class="gp-score"><span class="gp-score-lbl">Response</span><span class="gp-score-val">75/100</span></div>
+                  <div class="gp-score"><span class="gp-score-lbl">Info Use</span><span class="gp-score-val">68/100</span></div>
+                  <div class="gp-score"><span class="gp-score-lbl">Team</span><span class="gp-score-val">80/100</span></div>
+                </div>
+                <div class="gp-aar-eval">LOCAL AI EVALUATOR — Rating: PROFICIENT. Decision logged with intel snapshot. All evaluation performed locally.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INNOVATION -->
+    <section id="innovation" class="innovation-section">
+      <div class="section-head"><span class="tag">INNOVATION</span><h2 class="section-title">Core Innovations</h2></div>
+      <div class="innov-grid">
+        <div class="innov-card"><div class="innov-num">01</div><h3>Trust-Weighted Information Scoring</h3><p>Every intelligence source carries a dynamic reliability score. Trainees must learn to weight conflicting sources against each other under time pressure.</p><div class="innov-visual"><div class="trust-bar"><div class="trust-source"><span>SRC A</span><div class="trust-meter"><div class="trust-fill" style="width:85%;background:#3dd68c"></div></div><span>85%</span></div><div class="trust-source"><span>SRC B</span><div class="trust-meter"><div class="trust-fill" style="width:55%;background:#f59e0b"></div></div><span>55%</span></div><div class="trust-source"><span>SRC C</span><div class="trust-meter"><div class="trust-fill" style="width:30%;background:#ef4444"></div></div><span>30%</span></div></div></div></div>
+        <div class="innov-card"><div class="innov-num">02</div><h3>Asymmetric Information Per Role</h3><p>Each role receives different data. The commander sees the full picture, the Cyber/EW officer sees spectrum data, the Intel analyst sees the source reliability matrix.</p><div class="innov-visual"><div class="role-compare"><div class="role-box role-box-cmd"><span>COMMANDER</span><div class="role-info-tags"><span class="info-tag info-full">Full Map</span><span class="info-tag info-full">All Sources</span></div></div><div class="role-box role-box-cyber"><span>CYBER/EW</span><div class="role-info-tags"><span class="info-tag info-partial">Spectrum Only</span></div></div></div></div></div>
+        <div class="innov-card"><div class="innov-num">03</div><h3>Decision Confidence Slider</h3><p>Trainees self-report their confidence with each decision. The system tracks how confidence aligns with information quality — detecting overconfidence and hesitation.</p><div class="innov-visual"><div class="confidence-demo"><div class="confidence-track"><div class="confidence-fill" style="width:70%"></div><div class="confidence-thumb" style="left:70%"></div></div><div class="confidence-labels"><span>UNCERTAIN</span><span>70%</span><span>CERTAIN</span></div></div></div></div>
+        <div class="innov-card"><div class="innov-num">04</div><h3>What Did You Know at the Time?</h3><p>Each decision is evaluated against the information available at that exact moment — not with hindsight. A snapshot of the intel feed is captured with every submission.</p><div class="innov-visual"><div class="rationale-demo"><div class="rationale-line"><span class="dot dot-live"></span> 4 intel entries at T+02:15</div><div class="rationale-line"><span class="dot dot-warn"></span> 1 conflict unresolved</div><div class="rationale-line rationale-final"><span class="dot dot-critical"></span> "Evaluated with available data only"</div></div></div></div>
+        <div class="innov-card"><div class="innov-num">05</div><h3>Cascade Detection</h3><p>Based on research showing that one erroneous decision can trigger a self-reinforcing cycle of cascading failures. The system tracks and visualizes these cascades across the command structure.</p><div class="innov-visual"><div class="rationale-demo"><div class="rationale-line"><span class="dot dot-live"></span> Initial error at T+02:00</div><div class="rationale-line"><span class="dot dot-warn"></span> Field requests +3 at T+02:15</div><div class="rationale-line rationale-final"><span class="dot dot-critical"></span> Overload threshold exceeded — cascade detected</div></div></div></div>
+        <div class="innov-card"><div class="innov-num">06</div><h3>Explainable AAR</h3><p>The AI does not simply produce a score. It explains why the score was assigned — which sources were trusted, which were ignored, and how uncertainty was handled. Exportable as HTML and JSON.</p><div class="innov-visual"><div class="local-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span>EXPLAINABLE</span><span>NOT BLACK-BOX</span></div></div></div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="explain-section">
+      <div class="section-head"><span class="tag">RESEARCH BACKING</span><h2 class="section-title">Scientific Foundation</h2></div>
+      <div class="innov-grid">
+        <div class="innov-card"><div class="innov-num">PAPER 1</div><h3>Self-Reinforcing Degradation in Decision-making Teams</h3><p>A single erroneous decision can trigger a self-reinforcing cycle of cascading failures across the entire command structure. The S-curve model demonstrates that decision accuracy decreases non-linearly as workload increases.</p><div class="innov-visual"><div class="rationale-demo"><div class="rationale-line"><span class="dot dot-live"></span> Hubbard, Kott, Martin</div><div class="rationale-line rationale-final"><a href="https://arxiv.org/abs/1607.08139" target="_blank" rel="noopener" style="color:var(--primary);text-decoration:none">arXiv:1607.08139 &rarr;</a></div></div></div></div>
+        <div class="innov-card"><div class="innov-num">PAPER 2</div><h3>WARBENCH: Benchmark for LLMs in Military Decision-Making</h3><p>Nine AI models tested across 136 real-world conflict scenarios. At 40% information loss, even the most advanced models exhibit catastrophic performance degradation. Small models violated international law in 70% of cases.</p><div class="innov-visual"><div class="rationale-demo"><div class="rationale-line"><span class="dot dot-live"></span> Li, Wang, Xie, Ma, Wang</div><div class="rationale-line rationale-final"><a href="https://arxiv.org/abs/2603.21280" target="_blank" rel="noopener" style="color:var(--primary);text-decoration:none">arXiv:2603.21280 &rarr;</a></div></div></div></div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section id="roadmap" class="roadmap-section">
+      <div class="section-head"><span class="tag">FUTURE SCOPE</span><h2 class="section-title">Beyond the MVP</h2></div>
+      <div class="roadmap-grid">
+        <div class="roadmap-item"><div class="roadmap-status">Planned</div><h3>AR/VR Immersion</h3><p>Full immersive tactical environment with spatial audio and head-mounted displays.</p></div>
+        <div class="roadmap-item"><div class="roadmap-status">Planned</div><h3>RL Adversary</h3><p>Adaptive adversary AI that learns trainee weaknesses over successive exercises.</p></div>
+        <div class="roadmap-item"><div class="roadmap-status">Planned</div><h3>Cognitive Bias Detection</h3><p>Automated detection of confirmation bias, anchoring bias, and sunk-cost reasoning in decision rationales.</p></div>
+        <div class="roadmap-item"><div class="roadmap-status">Planned</div><h3>Real Military Data Integration</h3><p>C2 system interfaces for classified and unclassified operational data feeds.</p></div>
+        <div class="roadmap-item"><div class="roadmap-status">Planned</div><h3>Biometric Stress Tracking</h3><p>Heart rate and eye-tracking integration for cognitive load assessment during exercises.</p></div>
+        <div class="roadmap-item"><div class="roadmap-status">Planned</div><h3>Digital Twin Integration</h3><p>Real-world terrain and infrastructure modeling for high-fidelity scenario generation.</p></div>
+        <div class="roadmap-item"><div class="roadmap-status">Planned</div><h3>Cross-Team Benchmarking</h3><p>Comparative performance analytics across units, cohorts, and time periods.</p></div>
+        <div class="roadmap-item"><div class="roadmap-status">Planned</div><h3>Longitudinal Analysis</h3><p>Long-term trainee performance tracking and skill decay monitoring.</p></div>
+      </div>
+    </section>
+
+    <footer class="landing-footer">
+      <div class="footer-brand"><svg class="brand-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/><path d="M13 2L5 13h5l-2 9 8-12h-5l2-8z"/></svg><span>PRAHAR</span></div>
+      <p class="footer-text">PRAHAR — Indian Army command decision training system. Privacy-preserving, local-first, on-premise deployment.</p>
+      <p class="footer-copy">Demo prototype. All scenarios and AI evaluation are simulated. No operational data is used.</p>
+    </footer>
+  </main>
+
+  <!-- ===== AUTH: LOGIN ===== -->
+  <main id="view-login" class="view">
+    <div class="login-wrap">
+      <div class="login-head"><svg class="brand-logo brand-logo-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/><path d="M13 2L5 13h5l-2 9 8-12h-5l2-8z"/></svg><h1 class="login-title">PRAHAR</h1><p class="login-sub">Sign in to access the platform</p></div>
+      <div class="auth-form">
+        <div class="auth-error" id="auth-error" style="display:none"></div>
+        <label class="auth-label">Username<input type="text" id="login-username" class="auth-input" placeholder="Enter username" /></label>
+        <label class="auth-label">Password<input type="password" id="login-password" class="auth-input" placeholder="Enter password" /></label>
+        <button class="btn-primary auth-btn" data-auth="login">Sign In</button>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+          <p class="auth-switch" style="margin:0">New user? <a href="#" data-auth="go-register">Register</a></p>
+          <a href="#" data-auth="go-forgot" style="font-size:11px;color:var(--text-muted);text-decoration:underline">Forgot Password?</a>
+        </div>
+        <div id="instructor-code-hint" style="margin-top:14px;padding:12px;border:1px dashed var(--border);border-radius:6px;background:var(--surface);font-size:11px;color:var(--text-muted);text-align:center">
+          <strong style="color:var(--primary)">Quick Instructor Login</strong><br>
+          <span style="font-size:10px;opacity:0.8">Enter any username + use this code as password:</span><br>
+          <code id="instructor-code-value" style="font-family:var(--font-mono);font-size:13px;color:var(--primary);letter-spacing:1px;font-weight:700">Loading...</code>
+          <br><span style="font-size:10px;opacity:0.7">Or use it when registering as Instructor</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== AUTH: REGISTER ===== -->
+  <main id="view-register" class="view">
+    <div class="login-wrap">
+      <div class="login-head"><svg class="brand-logo brand-logo-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/><path d="M13 2L5 13h5l-2 9 8-12h-5l2-8z"/></svg><h1 class="login-title">PRAHAR</h1><p class="login-sub">Create a new account</p></div>
+      <div class="auth-form">
+        <div class="auth-error" id="reg-auth-error" style="display:none"></div>
+        <label class="auth-label">Username<input type="text" id="reg-username" class="auth-input" placeholder="Choose username" /></label>
+        <label class="auth-label">Password<input type="password" id="reg-password" class="auth-input" placeholder="Choose password" /></label>
+        <label class="auth-label">Role
+          <select id="reg-role" class="cfg-select" style="width:100%;padding:8px">
+            <option value="trainee">Trainee</option>
+            <option value="instructor">Instructor</option>
+          </select>
+        </label>
+        <div id="instructor-code-field" style="display:none;margin-top:8px">
+          <label class="auth-label">Instructor Access Code<input type="password" id="reg-instructor-code" class="auth-input" placeholder="Enter instructor access code" /></label>
+          <p style="font-size:10px;color:var(--text-muted);margin-top:-4px;margin-bottom:8px">Demo code: <code id="reg-instructor-code-hint" style="color:var(--primary);font-family:var(--font-mono)">Loading...</code></p>
+        </div>
+        <button class="btn-primary auth-btn" data-auth="register">Create Account</button>
+        <p class="auth-switch">Already have an account? <a href="#" data-auth="go-login">Sign In</a></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== AUTH: FORGOT PASSWORD ===== -->
+  <main id="view-forgot" class="view">
+    <div class="login-wrap">
+      <div class="login-head"><svg class="brand-logo brand-logo-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/><path d="M13 2L5 13h5l-2 9 8-12h-5l2-8z"/></svg><h1 class="login-title">PRAHAR</h1><p class="login-sub">Reset your password</p></div>
+      <div class="auth-form">
+        <div class="auth-error" id="forgot-auth-error" style="display:none"></div>
+        <div id="forgot-step1">
+          <label class="auth-label">Username<input type="text" id="forgot-username" class="auth-input" placeholder="Enter your username" /></label>
+          <button class="btn-primary auth-btn" data-auth="forgot-request">Generate Reset Token</button>
+        </div>
+        <div id="forgot-step2" style="display:none">
+          <div style="padding:10px;border:1px dashed var(--border);border-radius:6px;background:var(--surface);margin-bottom:10px;font-size:11px;color:var(--text-muted)">
+            Reset token generated (demo mode).<br>Copy the token below and use it to reset your password.
+          </div>
+          <label class="auth-label">Reset Token<input type="text" id="forgot-token" class="auth-input" placeholder="Paste reset token" /></label>
+          <label class="auth-label">New Password<input type="password" id="forgot-new-password" class="auth-input" placeholder="Enter new password" /></label>
+          <button class="btn-primary auth-btn" data-auth="forgot-reset">Reset Password</button>
+        </div>
+        <p class="auth-switch" style="margin-top:8px"><a href="#" data-auth="go-login">Back to Login</a></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== LOBBY ===== -->
+  <main id="view-lobby" class="view">
+    <header class="app-header">
+      <div class="app-left"><svg class="brand-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/><path d="M13 2L5 13h5l-2 9 8-12h-5l2-8z"/></svg><span class="brand-sm">PRAHAR</span></div>
+      <div class="app-center"><div class="lobby-title">Command Lobby</div></div>
+      <div class="app-right"><span id="lobby-user" class="role-ind">Loading...</span><button class="btn-ghost btn-xs" data-auth="logout">Logout</button></div>
+    </header>
+    <div class="lobby-body">
+      <div class="lobby-section">
+        <h2 class="lobby-h2">Create New Exercise</h2>
+        <div class="lobby-create">
+          <label class="auth-label">Exercise Name<input type="text" id="ex-name" class="auth-input" placeholder="OP DEEP FOG" value="OP DEEP FOG" /></label>
+          <button class="btn-primary" data-exercise="create">Create & Enter as Instructor</button>
+        </div>
+      </div>
+      <div class="lobby-section">
+        <h2 class="lobby-h2">Join Existing Exercise</h2>
+        <div class="lobby-join">
+          <label class="auth-label">Exercise Code<input type="text" id="join-code" class="auth-input" placeholder="ABC123" style="text-transform:uppercase" /></label>
+          <label class="auth-label">Your Role
+            <select id="join-role" class="cfg-select" style="width:100%;padding:8px">
+              <option value="commander">Commander Alpha</option>
+              <option value="cyber">Cyber / EW Officer</option>
+              <option value="air">Air Liaison</option>
+              <option value="intel">Intel Analyst</option>
+            </select>
+          </label>
+          <button class="btn-primary" data-exercise="join">Join Exercise</button>
+        </div>
+      </div>
+      <div class="lobby-section">
+        <h2 class="lobby-h2">Available Exercises</h2>
+        <div id="available-exercises" class="exercise-list"><div class="aar-empty">Loading...</div></div>
+      </div>
+      <div class="lobby-section">
+        <h2 class="lobby-h2">Your Exercises</h2>
+        <div id="exercise-list" class="exercise-list"><div class="aar-empty">Loading...</div></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== APP (SIMULATOR) ===== -->
+  <main id="view-app" class="view">
+    <header class="app-header">
+      <div class="app-left"><svg class="brand-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/><path d="M13 2L5 13h5l-2 9 8-12h-5l2-8z"/></svg><span class="brand-sm">PRAHAR</span><div class="hdr-div"></div><div class="ex-status"><span class="dot dot-warn" id="ex-dot"></span><span id="ex-text">STANDBY</span></div></div>
+      <div class="app-center"><div class="clock" id="clock">T+00:00:00</div><div class="scenario" id="scenario-lbl">OP DEEP FOG</div></div>
+      <div class="app-right"><div class="role-ind"><span class="role-dot" id="role-dot"></span><span id="role-text">Instructor</span></div><button class="btn-ghost btn-xs" data-action="go-landing">Exit</button></div>
+    </header>
+
+    <!-- FLOW TIMELINE -->
+    <div class="flow-timeline" id="flow-timeline">
+      <div class="ft-step active" data-ft="1"><div class="ft-dot"></div><span>Normal Comms</span></div>
+      <div class="ft-line"></div>
+      <div class="ft-step" data-ft="2"><div class="ft-dot"></div><span>Comms Degraded</span></div>
+      <div class="ft-line"></div>
+      <div class="ft-step" data-ft="3"><div class="ft-dot"></div><span>Conflicting Intel</span></div>
+      <div class="ft-line"></div>
+      <div class="ft-step" data-ft="4"><div class="ft-dot"></div><span>Decision</span></div>
+      <div class="ft-line"></div>
+      <div class="ft-step" data-ft="5"><div class="ft-dot"></div><span>AAR</span></div>
+    </div>
+
+    <div class="app-body">
+      <!-- LEFT: Controls -->
+      <aside class="left-panel" id="left-panel">
+        <!-- Instructor only -->
+        <div class="panel-sec instructor-only">
+          <div class="panel-title">Exercise Control</div>
+          <div class="ex-controls"><button class="btn-tac btn-start" data-action="start-exercise"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="5,3 19,12 5,21"/></svg>Start</button><button class="btn-tac btn-pause" data-action="pause-exercise"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>Pause</button><button class="btn-tac btn-end" data-action="end-exercise"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><rect x="5" y="5" width="14" height="14"/></svg>End</button></div>
+        </div>
+
+        <!-- SCENARIO CONFIG -->
+        <div class="panel-sec instructor-only">
+          <div class="panel-title">Scenario Configuration</div>
+          <div class="config-group">
+            <label class="cfg-label">Tempo
+              <select id="cfg-tempo" class="cfg-select">
+                <option value="slow">Slow (30s events)</option>
+                <option value="normal" selected>Normal (15s events)</option>
+                <option value="fast">Fast (8s events)</option>
+              </select>
+            </label>
+            <label class="cfg-label">Info Loss %
+              <input type="range" id="cfg-infoloss" class="cfg-range" min="0" max="60" value="20" />
+              <span class="cfg-val" id="cfg-infoloss-val">20%</span>
+            </label>
+            <div class="cfg-domains">
+              <span class="cfg-domain" data-domain="land"><span class="cfg-check">&#10003;</span> LAND</span>
+              <span class="cfg-domain" data-domain="air"><span class="cfg-check">&#10003;</span> AIR</span>
+              <span class="cfg-domain" data-domain="cyber"><span class="cfg-check">&#10003;</span> CYBER</span>
+              <span class="cfg-domain" data-domain="ew"><span class="cfg-check">&#10003;</span> EW</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-sec instructor-only">
+          <div class="panel-title">Inject Comms Degradation</div>
+          <div class="inject-list"><button class="btn-inj" data-inject="delay"><div class="inj-icon" style="color:#f59e0b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="inj-text"><span class="inj-label">Comms Delay</span><span class="inj-desc">Links turn amber, latency badge</span></div></button><button class="btn-inj" data-inject="blackout"><div class="inj-icon" style="color:#ef4444"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 12a9 9 0 11-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></div><div class="inj-text"><span class="inj-label">Signal Blackout</span><span class="inj-desc">Links cut, units show NO SIGNAL</span></div></button><button class="btn-inj" data-inject="packetloss"><div class="inj-icon" style="color:#f59e0b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M2 12h4l3-9 4 18 3-9h4"/></svg></div><div class="inj-text"><span class="inj-label">Packet Loss</span><span class="inj-desc">Links flicker, 30% data drops</span></div></button></div>
+        </div>
+        <div class="panel-sec instructor-only">
+          <div class="panel-title">Inject Conflicting Intel</div>
+          <div class="inject-list"><button class="btn-inj" data-inject="conflict-air"><div class="inj-icon" style="color:#06b6d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div><div class="inj-text"><span class="inj-label">Conflicting Air Report</span><span class="inj-desc">Phantom track appears on map</span></div></button><button class="btn-inj" data-inject="conflict-cyber"><div class="inj-icon" style="color:#a855f7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="inj-text"><span class="inj-label">Conflicting Cyber Alert</span><span class="inj-desc">EW interference rings appear</span></div></button><button class="btn-inj" data-inject="conflict-land"><div class="inj-icon" style="color:#f59e0b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M3 21l9-18 9 18z"/></svg></div><div class="inj-text"><span class="inj-label">Conflicting Land Intel</span><span class="inj-desc">Hostile position splits on map</span></div></button></div>
+        </div>
+        <div class="panel-sec instructor-only">
+          <div class="panel-title">Red-Team Inject Console</div>
+          <div class="inject-list"><button class="btn-inj" data-inject="weather"><div class="inj-icon" style="color:#6b7a8f"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg></div><div class="inj-text"><span class="inj-label">Weather Degrade</span><span class="inj-desc">Fog overlay on map</span></div></button><button class="btn-inj" data-inject="threat"><div class="inj-icon" style="color:#ef4444"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="inj-text"><span class="inj-label">New Threat</span><span class="inj-desc">New hostile appears on map</span></div></button><button class="btn-inj" data-inject="falseflag"><div class="inj-icon" style="color:#a855f7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 22V4M4 4l13 3-3 3 3 3-13-3"/></svg></div><div class="inj-text"><span class="inj-label">False Flag Op</span><span class="inj-desc">Friendly appears as hostile</span></div></button><button class="btn-inj" data-inject="overload"><div class="inj-icon" style="color:#ef4444"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div><div class="inj-text"><span class="inj-label">Info Overload</span><span class="inj-desc">Cascade trigger: +5 intel at once</span></div></button></div>
+        </div>
+
+        <!-- TEAM COORDINATION -->
+        <div class="panel-sec">
+          <div class="panel-title">Team Coordination</div>
+          <div class="team-status" id="team-status">
+            <div class="team-member" data-member="commander"><div class="tm-dot dot-live"></div><div class="tm-info"><span class="tm-name">CMD Alpha</span><span class="tm-stat" id="tm-cmd">STANDBY</span></div></div>
+            <div class="team-member" data-member="cyber"><div class="tm-dot dot-live"></div><div class="tm-info"><span class="tm-name">Cyber/EW</span><span class="tm-stat" id="tm-cyb">STANDBY</span></div></div>
+            <div class="team-member" data-member="air"><div class="tm-dot dot-live"></div><div class="tm-info"><span class="tm-name">Air Liaison</span><span class="tm-stat" id="tm-air">STANDBY</span></div></div>
+            <div class="team-member" data-member="intel"><div class="tm-dot dot-live"></div><div class="tm-info"><span class="tm-name">Intel Analyst</span><span class="tm-stat" id="tm-int">STANDBY</span></div></div>
+          </div>
+          <div class="team-note">Simulated multiplayer — each role sees asymmetric intel. Open multiple tabs to coordinate.</div>
+        </div>
+
+        <!-- CASCADE DETECTION -->
+        <div class="panel-sec">
+          <div class="panel-title">Cascade Detection</div>
+          <div class="cascade-panel" id="cascade-panel">
+            <div class="cascade-empty">No cascades detected.</div>
+          </div>
+        </div>
+
+        <!-- Trust vs Speed (all roles) -->
+        <div class="panel-sec">
+          <div class="panel-title">Trust vs Speed Evaluator</div>
+          <div class="eval-panel">
+            <div class="eval-row"><span class="eval-lbl">Info Reliability</span><div class="eval-track"><div class="eval-fill eval-fill-green" id="meter-rel" style="width:85%"></div></div><span class="eval-val" id="val-rel">85%</span></div>
+            <div class="eval-row"><span class="eval-lbl">Uncertainty</span><div class="eval-track"><div class="eval-fill eval-fill-amber" id="meter-unc" style="width:15%"></div></div><span class="eval-val" id="val-unc">LOW</span></div>
+            <div class="eval-row"><span class="eval-lbl">Decision Clock</span><div class="eval-track"><div class="eval-fill eval-fill-cyan" id="meter-clk" style="width:0%"></div></div><span class="eval-val" id="val-clk">--:--</span></div>
+            <div class="eval-row"><span class="eval-lbl">Confidence</span><div class="eval-track"><div class="eval-fill eval-fill-green" id="meter-conf" style="width:0%"></div></div><span class="eval-val" id="val-conf">--</span></div>
+          </div>
+        </div>
+
+        <div class="panel-sec">
+          <div class="panel-title">Decision Log</div>
+          <div class="dec-log" id="dec-log"><div class="dec-log-empty">No decisions recorded</div></div>
+        </div>
+      </aside>
+
+      <!-- CENTER: Tactical Map -->
+      <section class="map-section">
+        <div class="map-header"><div class="map-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7M9 20V7M9 20l6-3M9 7l6-3m0 0v13m0-13l5.447-2.724A1 1 0 0121 4.618v10.764a1 1 0 01-.553.894L15 19m0-13v13"/></svg><span id="map-title">TACTICAL MAP — SECTOR GOLF-7</span></div><div class="map-legend"><span class="lg-item"><span class="lg-dot lg-friendly"></span>Friendly</span><span class="lg-item"><span class="lg-dot lg-hostile"></span>Hostile</span><span class="lg-item"><span class="lg-dot lg-unknown"></span>Unknown</span></div></div>
+        <div class="map-wrap" id="map-wrap">
+          <svg class="map-svg" id="map-svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMin meet">
+            <defs>
+              <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="glow-lg"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <radialGradient id="terrain-g" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(61,214,140,0.03)"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+            </defs>
+            <rect width="800" height="500" fill="url(#terrain-g)"/>
+            <g id="grid-lines"></g>
+            <g id="coord-labels"></g>
+            <g id="zones"></g>
+            <g id="comms-links"></g>
+            <g id="units"></g>
+            <g id="effects"></g>
+            <g id="threats"></g>
+            <g id="decision-fx"></g>
+          </svg>
+          <div class="map-badges" id="map-badges"></div>
+          <div class="map-role-overlay" id="role-overlay"></div>
+        </div>
+        <div class="map-status">
+          <div class="ms-left"><span class="ms-item"><span class="dot dot-live" id="dot-alpha"></span>ALPHA</span><span class="ms-item"><span class="dot dot-live" id="dot-bravo"></span>BRAVO</span><span class="ms-item"><span class="dot dot-live" id="dot-air"></span>AIR-1</span></div>
+          <div class="ms-right" id="map-cond">CONDITIONS: NOMINAL</div>
+        </div>
+      </section>
+
+      <!-- RIGHT: Intel + Decision -->
+      <section class="right-panel">
+        <div class="intel-panel">
+          <div class="intel-head"><div class="intel-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg><span>INTELLIGENCE FEED</span></div></div>
+          <div class="role-banner" id="role-banner"></div>
+          <div class="intel-feed" id="intel-feed"><div class="feed-empty">Awaiting exercise start...</div></div>
+        </div>
+        <div class="decision-panel">
+          <div class="dp-header"><div class="dp-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span>DECISION SUBMISSION</span></div></div>
+          <div class="dp-body">
+            <div class="dp-prompt" id="dp-prompt"><p class="dp-prompt-text">Exercise not started. Instructor must initiate the scenario.</p></div>
+            <div class="dp-options" id="dp-options" style="display:none">
+              <button class="dp-option" data-decision="attack"><span class="dp-opt-title">Engage Hostile</span><span class="dp-opt-desc">Attack vectors on map, units move</span></button>
+              <button class="dp-option" data-decision="recon"><span class="dp-opt-title">Deploy Recon</span><span class="dp-opt-desc">Recon path drawn, unit moves</span></button>
+              <button class="dp-option" data-decision="defend"><span class="dp-opt-title">Fortify Position</span><span class="dp-opt-desc">Defensive perimeters appear</span></button>
+              <button class="dp-option" data-decision="retreat"><span class="dp-opt-title">Tactical Withdrawal</span><span class="dp-opt-desc">Retreat paths, units reposition</span></button>
+            </div>
+            <div class="dp-confidence" id="dp-confidence" style="display:none">
+              <label class="conf-label">Decision Confidence: <span id="conf-display">50%</span></label>
+              <input type="range" id="conf-slider" class="conf-slider" min="0" max="100" value="50" />
+              <div class="conf-ticks"><span>Uncertain</span><span>Certain</span></div>
+            </div>
+            <div class="dp-rationale" id="dp-rationale" style="display:none"><label for="rat-input" class="rat-label">Decision Rationale</label><textarea id="rat-input" class="rat-input" rows="2" placeholder="Explain your reasoning..."></textarea><div class="dp-snapshot" id="dp-snapshot" style="display:none"><span class="snap-label">Snapshot: <strong id="snap-count">0</strong> intel entries captured at decision time</span></div><button class="btn-primary btn-sm" data-action="submit-decision">Submit Decision</button></div>
+            <div class="dp-effect" id="dp-effect" style="display:none"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== AAR ===== -->
+  <main id="view-aar" class="view">
+    <header class="app-header"><div class="app-left"><svg class="brand-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/><path d="M13 2L5 13h5l-2 9 8-12h-5l2-8z"/></svg><span class="brand-sm">PRAHAR</span><div class="hdr-div"></div><span class="aar-hdr">After-Action Report</span></div><div class="app-right"><button class="btn-ghost btn-xs" data-action="go-landing">Exit</button></div></header>
+    <div class="aar-body">
+      <div class="aar-head"><div><div class="aar-name" id="aar-name">OP DEEP FOG</div><div class="aar-meta" id="aar-meta">Seed: 7734-A | Duration: 00:00 | Trainee: Instructor</div></div><div class="aar-actions"><button class="btn-export" data-action="export-aar-html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Export HTML</button><button class="btn-export btn-export-json" data-action="export-aar-json"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>Export JSON</button><button class="btn-ghost btn-sm" data-action="go-landing">Return</button></div></div>
+      <div class="aar-scores" id="aar-scores"><div class="score-card"><div class="score-lbl">Decision Quality</div><div class="score-val" id="sc-dec">&mdash;</div><div class="score-bar"><div class="score-fill" id="sb-dec"></div></div></div><div class="score-card"><div class="score-lbl">Response Time</div><div class="score-val" id="sc-res">&mdash;</div><div class="score-bar"><div class="score-fill" id="sb-res"></div></div></div><div class="score-card"><div class="score-lbl">Info Utilization</div><div class="score-val" id="sc-inf">&mdash;</div><div class="score-bar"><div class="score-fill" id="sb-inf"></div></div></div><div class="score-card"><div class="score-lbl">Team Coordination</div><div class="score-val" id="sc-coo">&mdash;</div><div class="score-bar"><div class="score-fill" id="sb-coo"></div></div></div></div>
+      <div class="aar-sec"><h3 class="aar-sec-title">Decision Timeline</h3><div class="aar-timeline" id="aar-tl"><div class="aar-empty">No decisions recorded.</div></div></div>
+      <div class="aar-sec"><h3 class="aar-sec-title">Cascade Analysis</h3><div class="aar-cascade" id="aar-cascade"><div class="aar-empty">No cascades detected.</div></div></div>
+      <div class="aar-sec"><h3 class="aar-sec-title">Communication Failures</h3><div class="aar-comms" id="aar-comms"><div class="aar-empty">No failures recorded.</div></div></div>
+      <div class="aar-sec"><h3 class="aar-sec-title">Local AI Decision Evaluation</h3><div class="aar-ai" id="aar-ai"><div class="aar-empty">No evaluation available.</div></div></div>
+      <div class="aar-sec"><h3 class="aar-sec-title">Areas for Improvement</h3><div class="aar-imp" id="aar-imp"><div class="aar-empty">Complete an exercise.</div></div></div>
+    </div>
+  </main>
+
+  <script>window.SENTINEL_API = 'port/8000';</script>
+  <script src="app-v6.js?v=fullstack-v6" defer></script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  const DEFAULT_LINE_HEIGHT = 16;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      const clone = document.documentElement.cloneNode(true);
+
+      stripExternal(clone);
+
+      const fontCss = await buildInlinedFontCss();
+      if (fontCss) {
+        const style = document.createElement("style");
+        style.textContent = fontCss;
+        clone.querySelector("head")?.appendChild(style);
+      }
+
+      inlineAll(document.documentElement, clone);
+
+      const cloneHtml = clone.outerHTML;
+      const blob = new Blob([cloneHtml], { type: "text/html" });
+      const dataUrl = await new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () =>
+          resolve(typeof reader.result === "string" ? reader.result : null);
+        reader.onerror = () => resolve(null);
+        reader.readAsDataURL(blob);
+      });
+
+      if (dataUrl) {
+        postResult(dataUrl);
+      } else {
+        postToTrustedTop({
+          type: "INLINE_EDIT_SCREENSHOT_ERROR",
+          requestId,
+          error: "Failed to generate screenshot",
+        });
+      }
+    } catch (error) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_ERROR",
+        requestId,
+        error: String(error),
+      });
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (event.data?.type === "INLINE_EDIT_CAPTURE_REQUEST") {
+      const parentOrigin = getTrustedParentOrigin(event);
+      if (parentOrigin) {
+        trustedTopOrigin = parentOrigin;
+        scrollForwarding = true;
+        handleCaptureRequest(event);
+      }
+    } else if (event.data?.type === "INLINE_EDIT_REGISTER_PARENT") {
+      const parentOrigin = getTrustedParentOrigin(event);
+      if (parentOrigin) {
+        trustedTopOrigin = parentOrigin;
+        postToTrustedTop({ type: "INLINE_EDIT_REGISTERED" });
+      }
+    }
+  });
+
+  postToTrustedTop({ type: "INLINE_EDIT_READY" });
+})();
+</script>
+</body>
+</html>
